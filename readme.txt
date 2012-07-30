@@ -19,4 +19,4 @@ In addition, you can also use Google's image extensions for Sitemaps to give Goo
 
 1. Unzip and upload `google-sitemap-image` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Visit `http://yourdomain.com/sitemap.xml`
+1. Visit `http://yourdomain.com/sitemap-image.xml`

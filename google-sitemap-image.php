@@ -11,7 +11,7 @@
  * Plugin URI: https://github.com/corvannoorloos/google-sitemap-image
  * Description: With image search, just as with web search, Google's goal is to provide the best and most relevant search results to our users. Following Google's <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=35769">Webmaster Guidelines</a> and <a href="http://www.google.com/support/webmasters/bin/answer.py?answer=114016">best practices for publishing images</a> can increase the likelihood that your images will be returned in those search results. In addition, you can also use Google's image extensions for Sitemaps to give Google additional information about the images on your site's URLs.
  * Author: Cor van Noorloos
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author URI: http://corvannoorloos.com/
  */
 
@@ -19,7 +19,7 @@ add_action( 'template_redirect', 'google_sitemap_image' );
 /**
  * Image XML Sitemap
  *
- * @since 0.1.0
+ * @since 0.1.1
  *
  * @global type $wpdb
  *
@@ -37,6 +37,7 @@ function google_sitemap_image() {
     AND ( post_type = 'post' OR post_type = 'page' OR post_type = 'post_type' )
     ORDER BY post_type DESC, post_modified DESC
     LIMIT 1000" );
+  header( "HTTP/1.1 200 OK" );
   header( 'X-Robots-Tag: noindex, follow', true );
   header( 'Content-Type: text/xml' );
   echo '<?xml version="1.0" encoding="' . get_bloginfo( 'charset' ) . '"?>' . "\n";
